@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learner-service
+  labels:
+    app: learner-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: learner-service
+  template:
+    metadata:
+      labels:
+        app: learner-service
+    spec:
+      containers:
+        - name: learner-service
+          image: ashenth/ds-assignment-2-educational-platform-for-online-learning-learner-service:latest
+          ports:
+            - containerPort: 8003

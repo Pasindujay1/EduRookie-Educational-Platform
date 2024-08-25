@@ -1,0 +1,25 @@
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68vh;
+}
+
+.success-content {
+  text-align: center;
+}
+
+.success-icon {
+  color: #4caf50;
+  width: 500px;
+}
+
+.success-heading {
+  font-size: 32px;
+}
+
+.success-message {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}

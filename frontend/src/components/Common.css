@@ -1,0 +1,17 @@
+.upload-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-button-icon {
+  color: #0455bf; /* Blue color for upload icon */
+  font-size: 36px;
+  margin-right: 8px;
+}
+
+.upload-button-text {
+  font-size: 18px;
+  font-weight: bold;
+}

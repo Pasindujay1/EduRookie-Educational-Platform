@@ -1,1 +1,1 @@
-# EduRookie-Educational-Platform
+# DS-Assignment-2-Educational-Platform-for-Online-Learning

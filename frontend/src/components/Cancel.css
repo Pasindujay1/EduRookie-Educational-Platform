@@ -1,0 +1,26 @@
+.cancel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68vh;
+}
+
+.cancel-content {
+  text-align: center;
+}
+
+.cancel-icon {
+  color: #f44336; /* Red color for cancel */
+  width: 500px;
+}
+
+.cancel-heading {
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+.cancel-message {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}
