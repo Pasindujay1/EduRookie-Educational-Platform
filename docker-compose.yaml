@@ -1,0 +1,68 @@
+version: '3.9'
+services:
+  course-service:
+    build: ./course-service
+    container_name: course_service_c
+    ports:
+      - '8001:8001'
+    volumes:
+      - ./course-service:/app
+      - /app/node_modules
+  learner-service:
+    build: ./learner-service
+    container_name: learner_service_c
+    ports:
+      - '8003:8003'
+    volumes:
+      - ./learner-service:/app
+      - /app/node_modules
+    depends_on:
+      - course-service
+      - user-service
+  user-service:
+    build: ./user-service
+    container_name: user_service_c
+    ports:
+      - '8002:8002'
+    volumes:
+      - ./user-service:/app
+      - /app/node_modules
+  gateway:
+    build: ./gateway
+    container_name: gateway_c
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./gateway:/app
+      - /app/node_modules
+    depends_on:
+      - course-service
+      - learner-service
+      - user-service
+      - payment-service
+      - notification-service
+  payment-service:
+    build: ./payment-service
+    container_name: payment_service_c
+    ports:
+      - '8004:8004'
+    volumes:
+      - ./payment-service:/app
+      - /app/node_modules
+  notification-service:
+    build: ./notification-service
+    container_name: notification_service_c
+    ports:
+      - '8005:8005'
+    volumes:
+      - ./notification-service:/app
+      - /app/node_modules
+  frontend:
+    build: ./frontend
+    container_name: frontend_c
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
